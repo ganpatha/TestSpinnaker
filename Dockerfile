@@ -10,4 +10,3 @@ RUN yum -y --setopt=tsflags=nodocs update && \
     yum clean all
 
 EXPOSE 80
-RUN service httpd restart
