@@ -1,17 +1,5 @@
-FROM centos:7
-MAINTAINER The CentOS Project <cloud-ops@centos.org>
-LABEL Vendor="CentOS" \
-      License=GPLv2 \
-      Version=2.4.6-40
+FROM nginx:latest
 
+COPY html/index.html /usr/share/nginx/html/index.html
 
-RUN yum -y --setopt=tsflags=nodocs update && \
-    yum -y --setopt=tsflags=nodocs install httpd && \
-    yum clean all && \
-    
-  
-EXPOSE 80
-
-
-
-
+RUN service nginx restart
