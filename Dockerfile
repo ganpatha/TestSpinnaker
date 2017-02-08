@@ -7,7 +7,8 @@ LABEL Vendor="CentOS" \
 
 RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install httpd && \
-    yum clean all 
+    yum clean all && \
+    ls
   
 EXPOSE 80
 
